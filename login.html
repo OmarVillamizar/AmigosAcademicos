@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" class="form-control" id="correo" name="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Firebase -->
+    <script type="module">
+        // Importar las funciones necesarias del SDK de Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        // Configuración de tu aplicación Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBbisuBBoTAsUcS9k7RvG_3sOF7tHk9D34",
+            authDomain: "amigosacademicos-bf4ed.firebaseapp.com",
+            projectId: "amigosacademicos-bf4ed",
+            storageBucket: "amigosacademicos-bf4ed.appspot.com",
+            messagingSenderId: "112868581776",
+            appId: "1:112868581776:web:3cfed59b909fe5e4cf1315",
+            measurementId: "G-DEYRTLVTQV"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+
+        // Función para manejar el submit del formulario de login
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const correo = document.getElementById('correo').value;
+            const password = document.getElementById('password').value;
+
+            // Iniciar sesión con Firebase Authentication
+            signInWithEmailAndPassword(auth, correo, password)
+                .then((userCredential) => {
+                    // Usuario ha iniciado sesión correctamente
+                    console.log('Usuario ha iniciado sesión correctamente:', userCredential.user);
+
+                    // Redirigir a la página de agendamiento
+                    window.location.href = 'agendamiento.html';
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error(errorMessage);
+                    alert(errorMessage);
+                });
+        });
+    </script>
+
+</body>
+</html>
