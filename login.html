@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión</title>
+    <link rel="icon" type="image/png" href="img/logo_vertical_Sistemas.png" />
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <!-- FONTS ROBOTO-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
 </head>
 <body>
-
-    <div class="container mt-5">
-        <h2>Login</h2>
+    <div class="container contain mt-5">
+        <div class="contain__img">
+            <img class="img" src="img/Logo-vertical.jpg" />
+        </div>
+        <h2 class="title">Iniciar Sesión</h2>
         <form id="loginForm">
             <div class="form-group">
                 <label for="correo">Correo electrónico:</label>
-                <input type="email" class="form-control" id="correo" name="correo" required>
+                <input type="email" class="form-control" id="correo" name="correo" required />
             </div>
             <div class="form-group">
                 <label for="password">Contraseña:</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <input type="password" class="form-control" id="password" name="password" required />
             </div>
-            <button type="submit" class="btn btn-primary">Ingresar</button>
+            <div class="buttons">
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <button id="registerBtn" class="btn btn-secondary">Crear cuenta</button>
+            </div>
         </form>
-        <button id="registerBtn" class="btn btn-secondary mt-3">Ir a Registro</button>
     </div>
 
     <!-- Bootstrap JS y jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Firebase -->
     <script type="module">
@@ -87,6 +98,5 @@
             window.location.href = 'index.html';
         });
     </script>
-
 </body>
 </html>
