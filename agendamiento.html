@@ -6,15 +6,17 @@
     <title>Agendamiento</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <style>
-        .time-slot { cursor: pointer; }
-        .time-slot.selected { background-color: #007bff; color: white; }
-        .time-slot.occupied { background-color: #d9534f; color: white; }
-    </style>
+    <!-- FONTS ROBOTO-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Agendamiento</h2>
+        <h2 class="title">Agendamiento</h2>
         <h4 id="studentInfo">Hola, </h4>
         <form id="agendarForm">
             <div class="form-group">
@@ -73,11 +75,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Obtener correo del localStorage
             const correo = localStorage.getItem('correo');
+            /*
             if (!correo) {
                 alert('No se encontró información del usuario. Por favor inicie sesión.');
                 window.location.href = 'login.html';
                 return;
-            }
+            }*/
 
             // Obtener estudiante por correo
             fetch(`http://localhost:8081/api/estudiantes/correo/${correo}`)

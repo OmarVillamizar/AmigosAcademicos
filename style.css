@@ -54,3 +54,16 @@
     background-color: #007bff;
     color: white;
 }
+
+.cerrarSesion{
+    display: flex;
+    justify-content: end;
+    margin-top: 40vh;
+    
+
+}
+
+/*Agendamiento.html*/
+.time-slot { cursor: pointer; }
+.time-slot.selected { background-color: #007bff; color: white; }
+.time-slot.occupied { background-color: #d9534f; color: white; }
