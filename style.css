@@ -7,7 +7,8 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top : 10vh;
+    margin-top : 4vh;
+    padding-bottom: 20px;
 }
 
 /*input*/
@@ -23,4 +24,13 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+}
+
+.contain__img{
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+    width: 50%;
 }
