@@ -5,27 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/logo_vertical_Sistemas.png" />
     <link href="style.css" rel="stylesheet">
-    <style>
-        .content {
-            margin-top: 20px;
-        }
-        .sidebar {
-            min-height: 100vh;
-            background-color: #f8f9fa;
-            padding: 20px;
-        }
-        .sidebar .nav-item {
-            margin-bottom: 15px;
-        }
-        .main-content {
-            padding: 20px;
-        }
-        .btn-blue {
-            background-color: #007bff;
-            color: white;
-        }
-    </style>
+    <!-- FONTS ROBOTO-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
     <div class="container-fluid">
@@ -34,19 +22,19 @@
                 <h4>Opciones</h4>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link btn btn-light" id="listarEstudiantesBtn">Listar Estudiantes</a>
+                        <a class="nav-link btn btn-light" id="listarEstudiantesBtn">Estudiantes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-light" id="listarTutoresBtn">Listar Tutores</a>
+                        <a class="nav-link btn btn-light" id="listarTutoresBtn">Tutores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-light" id="listarMiAgendamientoBtn">Listar Mi Agendamiento</a>
+                        <a class="nav-link btn btn-light" id="listarMiAgendamientoBtn">Mi Agendamiento</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-light" id="listarAgendamientosTutorBtn">Listar Agendamientos por Tutor</a>
+                        <a class="nav-link btn btn-light" id="listarAgendamientosTutorBtn">Agendamientos por Tutor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-light" id="listarTodosAgendamientosBtn">Listar Todos los Agendamientos</a>
+                        <a class="nav-link btn btn-light" id="listarTodosAgendamientosBtn">Todos los Agendamientos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-blue" id="volverAgendamientoBtn">Volver a Agendamiento</a>
@@ -66,6 +54,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const correo = localStorage.getItem('correo');
+            
             if (!correo) {
                 alert('No se encontró información del usuario. Por favor inicie sesión.');
                 window.location.href = 'login.html';
