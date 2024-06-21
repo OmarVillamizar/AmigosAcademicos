@@ -71,14 +71,27 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const correo = localStorage.getItem("correo");
         if (!correo) {
+          /*
           alert(
             "No se encontró información del usuario. Por favor inicie sesión."
           );
-          window.location.href = "login.html";
+          window.location.href = "login.html";*/
+          Swal.fire({
+            icon: "error",
+            title: "Usuario no encontrado",
+            text: "No se encontró información del usuario. Por favor inicie sesión",
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "Ok",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "login.html";
+            }
+          });
           return;
         }
 
@@ -112,7 +125,14 @@
                   })
                   .catch((error) => {
                     console.error("Error al listar estudiantes:", error);
-                    alert("Error al listar estudiantes");
+                    //alert("Error al listar estudiantes");
+                    Swal.fire({
+                      icon: "error",
+                      title: "Información no encontrada",
+                      text: "No se encontró información de los estudiantes",
+                      confirmButtonColor: "#3085d6",
+                      confirmButtonText: "Ok",
+                    });
                   });
               });
 
@@ -135,7 +155,14 @@
                   })
                   .catch((error) => {
                     console.error("Error al listar tutores:", error);
-                    alert("Error al listar tutores");
+                    //alert("Error al listar tutores");
+                    Swal.fire({
+                      icon: "error",
+                      title: "Información no encontrada",
+                      text: "No se encontró información de la lsita de tutores",
+                      confirmButtonColor: "#3085d6",
+                      confirmButtonText: "Ok",
+                    });
                   });
               });
 
@@ -168,7 +195,14 @@
                   })
                   .catch((error) => {
                     console.error("Error al listar mis agendamientos:", error);
-                    alert("Error al listar mis agendamientos");
+                    //alert("Error al listar mis agendamientos");
+                    Swal.fire({
+                      icon: "error",
+                      title: "Información no encontrada",
+                      text: "Error al listar mis agendamientos",
+                      confirmButtonColor: "#3085d6",
+                      confirmButtonText: "Ok",
+                    });
                   });
               });
 
@@ -206,7 +240,14 @@
                         "Error al listar agendamientos por tutor:",
                         error
                       );
-                      alert("Error al listar agendamientos por tutor");
+                      //alert("Error al listar agendamientos por tutor");
+                      Swal.fire({
+                      icon: "error",
+                      title: "Información no encontrada",
+                      text: "Error al listar agendamientos por tutor",
+                      confirmButtonColor: "#3085d6",
+                      confirmButtonText: "Ok",
+                    });
                     });
                 }
               });
@@ -241,7 +282,14 @@
                       "Error al listar todos los agendamientos:",
                       error
                     );
-                    alert("Error al listar todos los agendamientos");
+                    //alert("Error al listar todos los agendamientos");
+                    Swal.fire({
+                      icon: "error",
+                      title: "Información no encontrada",
+                      text: "Error al listar todos los agendamientos",
+                      confirmButtonColor: "#3085d6",
+                      confirmButtonText: "Ok",
+                    });
                   });
               });
 
@@ -256,7 +304,14 @@
           })
           .catch((error) => {
             console.error("Error al obtener estudiante:", error);
-            alert("Error al obtener información del estudiante");
+            //alert("Error al obtener información del estudiante");
+            Swal.fire({
+                      icon: "error",
+                      title: "Información no encontrada",
+                      text: "Error al obtener informacion del estudiante",
+                      confirmButtonColor: "#3085d6",
+                      confirmButtonText: "Ok",
+                    });
           });
 
         function convertTurno(turno) {
