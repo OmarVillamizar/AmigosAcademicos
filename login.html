@@ -22,6 +22,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Ingresar</button>
         </form>
+        <button id="registerBtn" class="btn btn-secondary mt-3">Ir a Registro</button>
     </div>
 
     <!-- Bootstrap JS y jQuery -->
@@ -61,6 +62,12 @@
             // Iniciar sesión con Firebase Authentication
             signInWithEmailAndPassword(auth, correo, password)
                 .then((userCredential) => {
+                    // Limpiar el local storage
+                    localStorage.clear();
+
+                    // Guardar el correo en local storage
+                    localStorage.setItem('correo', correo);
+
                     // Usuario ha iniciado sesión correctamente
                     console.log('Usuario ha iniciado sesión correctamente:', userCredential.user);
 
@@ -73,6 +80,11 @@
                     console.error(errorMessage);
                     alert(errorMessage);
                 });
+        });
+
+        // Redirección al registro
+        document.getElementById('registerBtn').addEventListener('click', function() {
+            window.location.href = 'index.html';
         });
     </script>
 
