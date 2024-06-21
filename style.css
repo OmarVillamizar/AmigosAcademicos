@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top : 10vh;
+}
+
+/*input*/
+
+
+.contain{
+    padding: 10px;
+    max-width: 400px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
