@@ -74,23 +74,28 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const correo = localStorage.getItem("correo");
-        /*
-            if (!correo) {
-                alert('No se encontró información del usuario. Por favor inicie sesión.');
-                window.location.href = 'login.html';
-                return;
-            }*/
+        if (!correo) {
+          alert(
+            "No se encontró información del usuario. Por favor inicie sesión."
+          );
+          window.location.href = "login.html";
+          return;
+        }
 
         let estudianteId;
         const infoContent = document.getElementById("infoContent");
 
-        // Obtener el ID del estudiante utilizando el correo almacenado en localStorage
+        /**
+         * Obtener el ID del estudiante utilizando el correo almacenado en localStorage
+         **/
         fetch(`http://localhost:8081/api/estudiantes/correo/${correo}`)
           .then((response) => response.json())
           .then((estudiante) => {
             estudianteId = estudiante.id;
 
-            // Listar estudiantes
+            /**
+             * Listar estudiantes
+             **/
             document
               .getElementById("listarEstudiantesBtn")
               .addEventListener("click", function () {
@@ -111,7 +116,9 @@
                   });
               });
 
-            // Listar tutores
+            /**
+             * Listar tutores
+             **/
             document
               .getElementById("listarTutoresBtn")
               .addEventListener("click", function () {
@@ -132,7 +139,9 @@
                   });
               });
 
-            // Listar mis agendamientos
+            /**
+             * Listar mis agendamientos
+             **/
             document
               .getElementById("listarMiAgendamientoBtn")
               .addEventListener("click", function () {
@@ -163,7 +172,9 @@
                   });
               });
 
-            // Listar agendamientos por tutor
+            /**
+             * Listar agendamientos por tutor
+             **/
             document
               .getElementById("listarAgendamientosTutorBtn")
               .addEventListener("click", function () {
@@ -200,7 +211,9 @@
                 }
               });
 
-            // Listar todos los agendamientos
+            /**
+             * Listar todos los agendamientos
+             **/
             document
               .getElementById("listarTodosAgendamientosBtn")
               .addEventListener("click", function () {
@@ -232,7 +245,9 @@
                   });
               });
 
-            // Volver a Agendamiento
+            /**
+             * Volver a agendamiento
+             **/
             document
               .getElementById("volverAgendamientoBtn")
               .addEventListener("click", function () {
@@ -257,9 +272,11 @@
         }
       });
 
-      document.getElementById('volverLoginBtn').addEventListener('click', function() {
-                window.location.href = 'login.html';
-            });
+      document
+        .getElementById("volverLoginBtn")
+        .addEventListener("click", function () {
+          window.location.href = "login.html";
+        });
     </script>
   </body>
 </html>

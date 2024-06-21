@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agendamiento</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
     <!-- FONTS ROBOTO-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,180 +16,201 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
+  </head>
+  <body>
     <div class="container mt-5">
-        <h2 class="title">Agendamiento</h2>
-        <h4 id="studentInfo">Hola, </h4>
-        <form id="agendarForm">
-            <div class="form-group">
-                <label for="tutor">Tutor:</label>
-                <select class="form-control" id="tutor" required></select>
-            </div>
-            <div class="form-group">
-                <label for="motivo">Motivo:</label>
-                <input type="text" class="form-control" id="motivo" required>
-            </div>
-            <div class="form-group">
-                <label for="codigoMateria">Código de Materia:</label>
-                <input type="text" class="form-control" id="codigoMateria" required>
-            </div>
-            <div id="horario" class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Hora/Día</th>
-                            <th>Lunes 24</th>
-                            <th>Martes 25</th>
-                            <th>Miércoles 26</th>
-                            <th>Jueves 27</th>
-                            <th>Viernes 28</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2pm - 4pm</td>
-                            <td class="time-slot" data-dia="2024-06-24" data-turno="0"></td>
-                            <td class="time-slot" data-dia="2024-06-25" data-turno="0"></td>
-                            <td class="time-slot" data-dia="2024-06-26" data-turno="0"></td>
-                            <td class="time-slot" data-dia="2024-06-27" data-turno="0"></td>
-                            <td class="time-slot" data-dia="2024-06-28" data-turno="0"></td>
-                        </tr>
-                        <tr>
-                            <td>4pm - 6pm</td>
-                            <td class="time-slot" data-dia="2024-06-24" data-turno="1"></td>
-                            <td class="time-slot" data-dia="2024-06-25" data-turno="1"></td>
-                            <td class="time-slot" data-dia="2024-06-26" data-turno="1"></td>
-                            <td class="time-slot" data-dia="2024-06-27" data-turno="1"></td>
-                            <td class="time-slot" data-dia="2024-06-28" data-turno="1"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <button type="button" class="btn btn-primary" id="agendarBtn">Agendar</button>
-            <button type="button" class="btn btn-secondary" id="listarInfoBtn">Listar Información</button>
-            <button type="button" class="btn btn-danger" id="volverLoginBtn">Volver a Login</button>
-        </form>
+      <h2 class="title">Agendamiento</h2>
+      <h4 id="studentInfo">Hola,</h4>
+      <form id="agendarForm">
+        <div class="form-group">
+          <label for="tutor">Tutor:</label>
+          <select class="form-control" id="tutor" required></select>
+        </div>
+        <div class="form-group">
+          <label for="motivo">Motivo:</label>
+          <input type="text" class="form-control" id="motivo" required />
+        </div>
+        <div class="form-group">
+          <label for="codigoMateria">Código de Materia:</label>
+          <input type="text" class="form-control" id="codigoMateria" required />
+        </div>
+        <div id="horario" class="table-responsive">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Hora/Día</th>
+                <th>Lunes 24</th>
+                <th>Martes 25</th>
+                <th>Miércoles 26</th>
+                <th>Jueves 27</th>
+                <th>Viernes 28</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2pm - 4pm</td>
+                <td class="time-slot" data-dia="2024-06-24" data-turno="0"></td>
+                <td class="time-slot" data-dia="2024-06-25" data-turno="0"></td>
+                <td class="time-slot" data-dia="2024-06-26" data-turno="0"></td>
+                <td class="time-slot" data-dia="2024-06-27" data-turno="0"></td>
+                <td class="time-slot" data-dia="2024-06-28" data-turno="0"></td>
+              </tr>
+              <tr>
+                <td>4pm - 6pm</td>
+                <td class="time-slot" data-dia="2024-06-24" data-turno="1"></td>
+                <td class="time-slot" data-dia="2024-06-25" data-turno="1"></td>
+                <td class="time-slot" data-dia="2024-06-26" data-turno="1"></td>
+                <td class="time-slot" data-dia="2024-06-27" data-turno="1"></td>
+                <td class="time-slot" data-dia="2024-06-28" data-turno="1"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="buttons__agendamiento">
+          <button type="button" class="btn btn-success" id="agendarBtn">
+            Agendar
+          </button>
+          <button type="button" class="btn btn-danger" id="listarInfoBtn">
+            Cancelar
+          </button>
+        </div>
+      </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Obtener correo del localStorage
-            const correo = localStorage.getItem('correo');
-            /*
-            if (!correo) {
-                alert('No se encontró información del usuario. Por favor inicie sesión.');
-                window.location.href = 'login.html';
-                return;
-            }*/
+      document.addEventListener("DOMContentLoaded", function () {
+        const correo = localStorage.getItem("correo");
+        if (!correo) {
+          alert(
+            "No se encontró información del usuario. Por favor inicie sesión."
+          );
+          window.location.href = "login.html";
+          return;
+        }
 
-            // Obtener estudiante por correo
-            fetch(`http://localhost:8081/api/estudiantes/correo/${correo}`)
-                .then(response => response.json())
-                .then(estudiante => {
-                    document.getElementById('studentInfo').innerText = `Hola ${estudiante.nombre}, con código ${estudiante.codigo}`;
-                    localStorage.setItem('estudianteId', estudiante.id);
-                })
-                .catch(error => {
-                    console.error('Error al obtener estudiante:', error);
-                    alert('Error al obtener información del estudiante');
-                });
+        /**
+         * Obtener estudiante por correo
+         **/
+        fetch(`http://localhost:8081/api/estudiantes/correo/${correo}`)
+          .then((response) => response.json())
+          .then((estudiante) => {
+            document.getElementById(
+              "studentInfo"
+            ).innerText = `Hola ${estudiante.nombre}, con código ${estudiante.codigo}`;
+            localStorage.setItem("estudianteId", estudiante.id);
+          })
+          .catch((error) => {
+            console.error("Error al obtener estudiante:", error);
+            alert("Error al obtener información del estudiante");
+          });
 
-            // Obtener lista de tutores
-            fetch('http://localhost:8081/api/tutores/list')
-                .then(response => response.json())
-                .then(tutores => {
-                    const tutorSelect = document.getElementById('tutor');
-                    tutores.forEach(tutor => {
-                        const option = document.createElement('option');
-                        option.value = tutor.id;
-                        option.text = tutor.nombre;
-                        tutorSelect.add(option);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error al obtener tutores:', error);
-                    alert('Error al obtener lista de tutores');
-                });
-
-            // Manejar la selección de horario
-            document.querySelectorAll('.time-slot').forEach(slot => {
-                slot.addEventListener('click', function() {
-                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
-                    this.classList.add('selected');
-                });
+        /**
+         * Obtener lista de tutores
+         **/
+        fetch("http://localhost:8081/api/tutores/list")
+          .then((response) => response.json())
+          .then((tutores) => {
+            const tutorSelect = document.getElementById("tutor");
+            tutores.forEach((tutor) => {
+              const option = document.createElement("option");
+              option.value = tutor.id;
+              option.text = tutor.nombre;
+              tutorSelect.add(option);
             });
+          })
+          .catch((error) => {
+            console.error("Error al obtener tutores:", error);
+            alert("Error al obtener lista de tutores");
+          });
 
-            // Manejar el envío del formulario de agendamiento
-            document.getElementById('agendarBtn').addEventListener('click', function() {
-                const selectedSlot = document.querySelector('.time-slot.selected');
-                if (!selectedSlot) {
-                    alert('Seleccione un horario');
-                    return;
-                }
-
-                const tutorId = document.getElementById('tutor').value;
-                const motivo = document.getElementById('motivo').value;
-                const codigoMateria = document.getElementById('codigoMateria').value;
-                const estudianteId = localStorage.getItem('estudianteId');
-                const fecha = selectedSlot.getAttribute('data-dia');
-                const turno = selectedSlot.getAttribute('data-turno');
-
-                if (!tutorId || !motivo || !codigoMateria) {
-                    alert('Por favor complete todos los campos');
-                    return;
-                }
-
-                const agendamientoData = {
-                    estudiante: {
-                        id: parseInt(estudianteId)
-                    },
-                    tutor: {
-                        id: parseInt(tutorId)
-                    },
-                    motivo: motivo,
-                    codigoMateria: codigoMateria,
-                    fecha: fecha,
-                    turno: parseInt(turno)
-                };
-
-                fetch('http://localhost:8081/api/agendamientos/agendar', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(agendamientoData)
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        return response.text().then(text => { throw new Error(text); });
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Agendamiento registrado correctamente:', data);
-                    alert('Agendamiento registrado correctamente');
-                    // Actualizar la tabla para reflejar el nuevo estado
-                    selectedSlot.classList.add('occupied');
-                })
-                .catch(error => {
-                    console.error('Error al registrar agendamiento:', error);
-                    alert('Error al registrar agendamiento: ' + error.message);
-                });
-            });
-
-            // Redirigir a la página de información
-            document.getElementById('listarInfoBtn').addEventListener('click', function() {
-                window.location.href = 'informacion.html';
-            });
-
-            // Redirigir a la página de login
-            document.getElementById('volverLoginBtn').addEventListener('click', function() {
-                window.location.href = 'login.html';
-            });
+        /**
+         * Manejar selección de horario
+         **/
+        document.querySelectorAll(".time-slot").forEach((slot) => {
+          slot.addEventListener("click", function () {
+            document
+              .querySelectorAll(".time-slot")
+              .forEach((s) => s.classList.remove("selected"));
+            this.classList.add("selected");
+          });
         });
+
+        /**
+         * Manejar el envío del formulario de agendamiento
+         **/
+        document
+          .getElementById("agendarBtn")
+          .addEventListener("click", function () {
+            const selectedSlot = document.querySelector(".time-slot.selected");
+            if (!selectedSlot) {
+              alert("Seleccione un horario");
+              return;
+            }
+
+            const tutorId = document.getElementById("tutor").value;
+            const motivo = document.getElementById("motivo").value;
+            const codigoMateria =
+              document.getElementById("codigoMateria").value;
+            const estudianteId = localStorage.getItem("estudianteId");
+            const fecha = selectedSlot.getAttribute("data-dia");
+            const turno = selectedSlot.getAttribute("data-turno");
+
+            if (!tutorId || !motivo || !codigoMateria) {
+              alert("Por favor complete todos los campos");
+              return;
+            }
+
+            const agendamientoData = {
+              estudiante: {
+                id: parseInt(estudianteId),
+              },
+              tutor: {
+                id: parseInt(tutorId),
+              },
+              motivo: motivo,
+              codigoMateria: codigoMateria,
+              fecha: fecha,
+              turno: parseInt(turno),
+            };
+
+            fetch("http://localhost:8081/api/agendamientos/agendar", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(agendamientoData),
+            })
+              .then((response) => {
+                if (!response.ok) {
+                  return response.text().then((text) => {
+                    throw new Error(text);
+                  });
+                }
+                return response.json();
+              })
+              .then((data) => {
+                console.log("Agendamiento registrado correctamente:", data);
+                alert("Agendamiento registrado correctamente");
+                // Actualizar la tabla para reflejar el nuevo estado
+                selectedSlot.classList.add("occupied");
+              })
+              .catch((error) => {
+                console.error("Error al registrar agendamiento:", error);
+                alert("Error al registrar agendamiento: " + error.message);
+              });
+          });
+
+        /**
+         * Redirigir a la página de información
+         **/
+        document
+          .getElementById("listarInfoBtn")
+          .addEventListener("click", function () {
+            window.location.href = "informacion.html";
+          });
+      });
     </script>
-</body>
+  </body>
 </html>

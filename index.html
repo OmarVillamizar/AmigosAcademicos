@@ -79,7 +79,6 @@
 
     <!-- Firebase -->
     <script type="module">
-      // Importar las funciones necesarias del SDK de Firebase
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
       import {
@@ -87,7 +86,6 @@
         createUserWithEmailAndPassword,
       } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-      // Configuración de tu aplicación Firebase
       const firebaseConfig = {
         apiKey: "AIzaSyBbisuBBoTAsUcS9k7RvG_3sOF7tHk9D34",
         authDomain: "amigosacademicos-bf4ed.firebaseapp.com",
@@ -98,12 +96,10 @@
         measurementId: "G-DEYRTLVTQV",
       };
 
-      // Inicializar Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
       const auth = getAuth(app);
 
-      // Función para registrar usuario con Firebase Authentication
       document
         .getElementById("registroForm")
         .addEventListener("submit", function (event) {
@@ -112,16 +108,16 @@
           const nombre = document.getElementById("nombre").value;
           const codigo = document.getElementById("codigo").value;
           const correo = document.getElementById("correo").value;
-          const password = document.getElementById("password").value; // Obtener el valor del campo contraseña
+          const password = document.getElementById("password").value;
 
-          // Crear usuario en Firebase Authentication con correo y contraseña
+          /**
+           * Crear usuario en Firebase Authentication con correo y contraseña
+           **/
           createUserWithEmailAndPassword(auth, correo, password)
             .then((userCredential) => {
-              // Usuario registrado correctamente en Firebase Auth
               const user = userCredential.user;
-              const uuid = user.uid; // Obtener el UUID generado por Firebase
+              const uuid = user.uid;
 
-              // Datos a enviar al backend (API local)
               const data = {
                 nombre: nombre,
                 codigo: codigo,
@@ -129,7 +125,9 @@
                 uuid: uuid,
               };
 
-              // Enviar datos al backend usando fetch
+              /**
+               * Enviar datos al backend usando fetch
+               **/
               fetch("http://localhost:8081/api/estudiantes/crear", {
                 method: "POST",
                 headers: {
@@ -146,7 +144,6 @@
                 .then((data) => {
                   console.log("Estudiante registrado correctamente:", data);
                   alert("Estudiante registrado correctamente");
-                  // Redirigir a otra página o realizar alguna otra acción después de un registro exitoso
                 })
                 .catch((error) => {
                   console.error("Error al registrar estudiante:", error);
@@ -160,8 +157,6 @@
               alert(errorMessage);
             });
         });
-
-      // Redirección al login
       document
         .getElementById("loginBtn")
         .addEventListener("click", function () {
